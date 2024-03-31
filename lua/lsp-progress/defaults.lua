@@ -11,7 +11,7 @@ local Defaults = {
     -- Spinning update time in milliseconds.
     --
     --- @type integer
-    spin_update_time = 200,
+    spin_update_time = 64,
 
     -- Last message cached decay time in milliseconds.
     --
@@ -19,7 +19,7 @@ local Defaults = {
     -- instant) that user cannot even see it, thus we cache the last message for a while for user view.
     --
     --- @type integer
-    decay = 700,
+    decay = 500,
 
     -- User event name.
     --
@@ -132,7 +132,7 @@ local Defaults = {
     ---     The returned value will be returned as the result of `progress` API.
     format = function(client_messages)
         -- icon: nf-fa-gear \uf013
-        local sign = " LSP"
+        local sign = "★"
         if #client_messages > 0 then
             return sign .. " " .. table.concat(client_messages, " ")
         end
